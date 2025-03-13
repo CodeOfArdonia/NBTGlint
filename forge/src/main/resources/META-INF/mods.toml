@@ -1,0 +1,28 @@
+modLoader = "lowcodefml"
+loaderVersion = "[47,)"
+issueTrackerURL = "https://github.com/CodeOfArdonia/NBTGlint/issues"
+license = "All Right Reserved"
+
+[[mods]]
+modId = "nbt_glint"
+version = "${version}"
+displayName = "NBT Glint"
+authors = "IAFEnvoy"
+description = '''
+A client side mod for color glint
+'''
+logoFile = "logo.png"
+
+[[dependencies.nbt_glint]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.nbt_glint]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.20.2)"
+ordering = "NONE"
+side = "BOTH"
