@@ -1,9 +1,9 @@
-architectury {
-    common rootProject.enabled_platforms.split(',')
-}
-
 loom {
     accessWidenerPath = file("src/main/resources/nbt_glint.accesswidener")
+}
+
+architectury {
+    common rootProject.enabled_platforms.split(',')
 }
 
 dependencies {

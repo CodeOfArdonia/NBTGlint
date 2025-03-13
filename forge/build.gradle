@@ -3,7 +3,10 @@ plugins {
 }
 
 loom {
+    accessWidenerPath = project(":common").loom.accessWidenerPath
     forge {
+        convertAccessWideners = true
+        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
         mixinConfig "nbt_glint.mixins.json"
     }
 }
@@ -11,15 +14,6 @@ loom {
 architectury {
     platformSetupLoomIde()
     forge()
-}
-
-loom {
-    accessWidenerPath = project(":common").loom.accessWidenerPath
-    forge {
-        convertAccessWideners = true
-        extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
-        mixinConfig "nbt_glint.mixins.json"
-    }
 }
 
 configurations {
@@ -44,6 +38,9 @@ dependencies {
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
+
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.2.0"))
+    implementation(include("io.github.llamalad7:mixinextras-forge:0.2.0"))
 }
 
 processResources {
