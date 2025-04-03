@@ -41,6 +41,6 @@ public class ItemRendererMixin {
 
     @ModifyExpressionValue(method = "getDirectItemGlintConsumer", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/RenderLayer;getDirectGlint()Lnet/minecraft/client/render/RenderLayer;"))
     private static RenderLayer onGetDirectItemGlintConsumer(RenderLayer original) {
-        return GlintLayerManager.process(original, nbt_glint$tempStack);
+        return GlintLayerManager.processStack(original, nbt_glint$tempStack);
     }
 }

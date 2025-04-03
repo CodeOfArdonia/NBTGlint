@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 public class GlintManager {
-    public static final String GLINT_KEY = "glint";
-    public static final String GLINT_ALWAYS_KEY = "glint_always";
+    public static final String GLINT_KEY = "%s:glint".formatted(NBTGlint.MOD_ID);
+    public static final String GLINT_ALWAYS_KEY = "%s:glint_always".formatted(NBTGlint.MOD_ID);
     public static final List<GlintHolder> HOLDERS = new ArrayList<>();
     public static final Map<String, GlintHolder> BY_ID = new HashMap<>();
 
